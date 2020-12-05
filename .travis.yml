@@ -4,9 +4,9 @@ services:
   - docker
 before_install:
   - echo "start Creating Image!"
-  - docker build -t guya/docker-react-app -f Dockerfile ./
+  - docker build -t guya/docker-react-app -f Dockerfile.dev ./
 script:
-  - docker run -e CI=true guya/docker-react-app
+  - docker run -e CI=true guya/docker-react-app npm run test -- --coverage
   
 deploy:
   provider: elasticbeanstalk
