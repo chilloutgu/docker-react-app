@@ -3,7 +3,6 @@ FROM node:alpine
 MAINTAINER guya
 WORKDIR /usr/src/app
 COPY ./ ./
-RUN npm install --save core-js@3
 RUN npm install
 CMD ["npm", "run", "start"]
 
