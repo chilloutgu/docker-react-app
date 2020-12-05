@@ -1,7 +1,9 @@
 #dev
 FROM node:alpine
+MAINTAINER guya
 WORKDIR /usr/src/app
 COPY ./ ./
+RUN apt-get update && apt-get install npm
 RUN npm install
 CMD ["npm", "run", "start"]
 
